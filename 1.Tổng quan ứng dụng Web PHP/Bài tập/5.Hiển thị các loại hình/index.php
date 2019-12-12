@@ -23,7 +23,6 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $indraw = $_POST["draw"];
-        //    var_dump($indraw);
     }
     class DrawInput
     {
