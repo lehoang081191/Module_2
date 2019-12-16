@@ -13,7 +13,7 @@
     include_once('Point.php');
     include_once('MoveablePoint.php');
     $objPoint1 = new Point(2, 2);
-    echo print_r($objPoint1->getXY());
+    echo ($objPoint1->getXY());
     echo "<br/>Point1: " . $objPoint1->toString();
     $objMovablePoint1 = new MoveablePoint();
     echo "<br/>MP1: " . $objMovablePoint1->toString();
