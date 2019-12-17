@@ -14,21 +14,21 @@
     include_once('Point3D.php');
     $point2d = new Point2D();
     $point3d = new Point3D();
-    echo $point2d->toString();
+    echo $point2d->__toString();
     echo "<br/>";
-    echo $point3d->toString();
+    echo $point3d->__toString();
     echo "<br/>";
     $point2d_1 = new Point2D(10, 10);
     $point3d_1 = new Point3D(10, 10, 10);
-    echo $point2d_1->toString();
+    echo $point2d_1->__toString();
     echo "<br/>";
-    echo $point3d_1->toString();
+    echo $point3d_1->__toString();
     echo "<br/>";
     $point2d_1->setXY(8, 5);
     $point3d_1->setXYZ(5, 4, 2);
-    echo $point2d_1->toString();
+    echo $point2d_1->__toString();
     echo "<br/>";
-    echo $point3d_1->toString();
+    echo $point3d_1->__toString();
     ?>
 </body>
 

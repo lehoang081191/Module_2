@@ -26,7 +26,7 @@ class Point3D extends Point2D
         $this->y = $y;
         $this->z = $z;
     }
-    public function toString()
+    public function __toString()
     {
         return "($this->x,$this->y,$this->z)";
     }

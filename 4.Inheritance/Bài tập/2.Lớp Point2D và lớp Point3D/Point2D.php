@@ -33,7 +33,7 @@ class Point2D
         $this->x = $x;
         $this->y = $y;
     }
-    public function toString()
+    public function __toString()
     {
         return "($this->x,$this->y)";
     }
