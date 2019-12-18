@@ -1,6 +1,7 @@
 <?php
-include_once('shape.php');
-class Rectangle extends Shape implements iResizeable
+include_once('Shape.php');
+class Rectangle extends Shape
+
 {
     public $width;
     public $height;

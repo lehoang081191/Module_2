@@ -1,6 +1,6 @@
 <?php
-include_once('shape.php');
-class Circle extends Shape implements iResizeable
+include_once('Shape.php');
+class Circle extends Shape 
 {
     public $radius;
     public function __construct($name, $radius)

@@ -1,8 +1,10 @@
 <?php
-include_once('circle.php');
-include_once('cylinder.php');
-include_once('rectangle.php');
-include_once('square.php');
+include_once('Circle.php');
+include_once('Cylinder.php');
+include_once('Rectangle.php');
+include_once('Square.php');
+include_once('Shape.php');
+
 $shapes[0] = new Circle('Circle 01', 3);
 $shapes[1] = new Cylinder('Cylinder 01', 3, 4);
 $shapes[2] = new Rectangle('Rectangle 01', 3, 4);

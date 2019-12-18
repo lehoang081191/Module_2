@@ -1,5 +1,5 @@
 <?php
-include_once 'iResizeable.php';
+include_once 'IColorable.php';
 class Shape
 {
     public $name;
