@@ -2,6 +2,7 @@
 @section('title', 'Thêm mới khách hàng')
 
 @section('content')
+
 <div class="col-12 col-md-12">
    <div class="row">
       <div class="col-12">
