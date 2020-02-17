@@ -11,8 +11,10 @@
 */
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
+
     return view('home');
 });
+
 //tao group route customers
 Route::group(['prefix' => 'customers'], function () {
     Route::get('/','CustomerController@index')->name('customers.index');
@@ -23,6 +25,7 @@ Route::group(['prefix' => 'customers'], function () {
     Route::get('/{id}/destroy','CustomerController@destroy')->name('customers.destroy');
     Route::get('/filter','CustomerController@filterByCity')->name('customers.filterByCity');
 });
+
 //tao group route cties
 Route::group(['prefix' => 'cities'], function () {
     Route::get('/','CityController@index')->name('cities.index');

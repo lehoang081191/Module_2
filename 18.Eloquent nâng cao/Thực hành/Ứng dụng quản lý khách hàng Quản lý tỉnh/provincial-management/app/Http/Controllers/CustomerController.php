@@ -1,10 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\City;
 use App\Customer;
+use App\Phone;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
 class CustomerController extends Controller
 {
     /**
@@ -14,8 +18,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
+        $customers = Customer::paginate(5);
         $cities = City::all();
+
         return view('customers.list', compact('customers', 'cities'));
     }
     /**
@@ -26,6 +31,7 @@ class CustomerController extends Controller
     public function create()
     {
         $cities = City::all();
+
         return view('customers.create', compact('cities'));
     }
     /**
@@ -41,8 +47,13 @@ class CustomerController extends Controller
         $customer->dob      = $request->input('dob');
         $customer->city_id  = $request->input('city_id');
         $customer->save();
+
+        if (request('phone')) {
+            $customer->phone()->save(new Phone(['phone' => request('phone')]));
+        }
         //dung session de dua ra thong bao
         Session::flash('success', 'Tạo mới khách hàng thành công');
+
         //tao moi xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
@@ -56,6 +67,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::findOrFail($id);
         $cities = City::all();
+
         return view('customers.edit', compact('customer', 'cities'));
     }
     /**
@@ -72,8 +84,18 @@ class CustomerController extends Controller
         $customer->dob      = $request->input('dob');
         $customer->city_id  = $request->input('city_id');
         $customer->save();
+
+        if (request('phone')) {
+            if (!$customer->phone()){
+                $customer->phone->phone = request('phone');
+                $customer->push();
+            }else {
+                $customer->phone()->save(new Phone(['phone' => request('phone')]));
+            }
+        }
         //dung session de dua ra thong bao
         Session::flash('success', 'Cập nhật khách hàng thành công');
+
         //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
@@ -89,6 +111,7 @@ class CustomerController extends Controller
         $customer->delete();
         //dung session de dua ra thong bao
         Session::flash('success', 'Xóa khách hàng thành công');
+
         //xoa xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
@@ -101,6 +124,7 @@ class CustomerController extends Controller
         $customers = Customer::where('city_id', $cityFilter->id)->get();
         $totalCustomerFilter = count($customers);
         $cities = City::all();
+
         return view('customers.list', compact('customers', 'cities', 'totalCustomerFilter', 'cityFilter'));
     }
 }

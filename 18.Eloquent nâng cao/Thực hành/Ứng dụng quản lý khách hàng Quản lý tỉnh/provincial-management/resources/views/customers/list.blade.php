@@ -38,6 +38,7 @@
                     <th scope="col">Tên khách hàng</th>
                     <th scope="col">Ngày Sinh</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
                     <th scope="col">Tỉnh thành</th>
                     <th></th>
                     <th></th>
@@ -55,6 +56,7 @@
                         <td>{{ $customer->name }}</td>
                         <td>{{ $customer->dob }}</td>
                         <td>{{ $customer->email }}</td>
+                        <td>{{ isset($customer->phone) ? $customer->phone->phone : '' }}</td>
                         <td>{{ $customer->city->name }}</td>
                         <td><a href="{{ route('customers.edit', $customer->id) }}">sửa</a></td>
                         <td><a href="{{ route('customers.destroy', $customer->id) }}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
@@ -65,7 +67,9 @@
             </table>
             <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
         </div>
-
+        <div class="pagination justify-content-center mt-5">
+            {{ $customers->links() }}
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="cityModal" role="dialog">
             <div class="modal-dialog modal-lg">

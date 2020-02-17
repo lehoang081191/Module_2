@@ -19,6 +19,10 @@
                         <input type="email" class="form-control" name="email" value="{{ $customer->email }}" required>
                     </div>
                     <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" name="phone" value="{{ isset($customer->phone) ? $customer->phone->phone : '' }}" required>
+                    </div>
+                    <div class="form-group">
                         <label>Ngày sinh</label>
                         <input type="date" class="form-control" name="dob" value="{{ $customer->dob }}" required>
                     </div>

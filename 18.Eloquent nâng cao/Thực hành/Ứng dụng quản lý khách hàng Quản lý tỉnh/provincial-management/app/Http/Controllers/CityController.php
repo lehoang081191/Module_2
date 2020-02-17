@@ -14,6 +14,7 @@ class CityController extends Controller
     public function index()
     {
         $cities = City::all();
+
         return view('cities.list', compact('cities'));
     }
     /**
@@ -37,6 +38,7 @@ class CityController extends Controller
         $city->save();
         //dung session de dua ra thong bao
         Session::flash('success', 'Tạo mới thành công');
+
         //tao moi xong quay ve trang danh sach tinh thanh
         return redirect()->route('cities.index');
     }
@@ -49,6 +51,7 @@ class CityController extends Controller
     public function edit($id)
     {
         $city = City::findOrFail($id);
+
         return view('cities.edit', compact('city'));
     }
     /**
@@ -64,6 +67,7 @@ class CityController extends Controller
         $city->save();
         //dung session de dua ra thong bao
         Session::flash('success', 'Cập nhật thành công');
+
         //cap nhat xong quay ve trang danh sach tinh
         return redirect()->route('cities.index');
     }
@@ -81,6 +85,7 @@ class CityController extends Controller
         $city->delete();
         //dung session de dua ra thong bao
         Session::flash('success', 'Xóa  thành công');
+        
         //cap nhat xong quay ve trang danh sach tinh thanh
         return redirect()->route('cities.index');
     }

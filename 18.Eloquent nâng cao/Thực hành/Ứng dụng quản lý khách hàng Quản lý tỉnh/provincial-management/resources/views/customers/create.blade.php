@@ -19,6 +19,10 @@
                         <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                     </div>
                     <div class="form-group">
+                        <label >Phone</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Enter phone" required>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputEmail1">Ngày sinh</label>
                         <input type="date" class="form-control" name="dob" required>
                     </div>
