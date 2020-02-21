@@ -10,14 +10,14 @@
 
     <!-- Author -->
     <p class="lead">
-      by
+      Tác giả
       <b>{{$val->author}}</b>
     </p>
 
     <hr>
 
     <!-- Date/Time -->
-    <p>Posted on <i>{{$val->created_at}}</i><i class="fas fa-eye" style="margin-left:20px"></i>{{$val->view}}</p>
+    <p>Được đăng vào lúc <i>{{$val->created_at}}</i><i class="fas fa-eye" style="margin-left:20px"></i>{{$val->view}}</p>
 
     <hr>
 
@@ -32,14 +32,14 @@
 
     <!-- Comments Form -->
     <div class="card my-4">
-      <h5 class="card-header">Comment:</h5>
+      <h5 class="card-header">Bình luận:</h5>
       <div class="card-body">
         <form action="{{route('home.post.comment',$val->id)}}" method="POST">
             @csrf
           <div class="form-group">
             <textarea class="form-control" rows="3" id="cmt" name="content" onblur="checkcmt();"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" id="bncmt" >Submit</button>
+          <button type="submit" class="btn btn-primary" id="bncmt" >Xác nhận</button>
         </form>
       </div>
     </div>

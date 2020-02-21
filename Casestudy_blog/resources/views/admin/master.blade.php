@@ -29,11 +29,13 @@
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="{{route('admin.get.index')}}">
+                  <a class="brand" href="{{route('admin.get.index')}}">
+                    <i class="fa fa-adn"></i>
 			  		Admin Dashboard
                   </a>
 
                   <a class="brand" href="{{route('home.get.index')}}">
+                    <i class="fa fa-home"></i>
                     Home
                 </a>
 
@@ -61,11 +63,11 @@
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{route('admin.info.get.profile')}}">Your Profile</a></li>
-								<li><a href="{{route('admin.info.get.edit')}}">Edit Profile</a></li>
-								<li><a href="#" data-toggle="modal" data-target="#myModal">Change your password</a></li>
+								<li><a href="{{route('admin.info.get.profile')}}">Hồ sơ của bạn</a></li>
+								<li><a href="{{route('admin.info.get.edit')}}">Chỉnh sửa hồ sơ</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#myModal">Thay đổi mật khẩu</a></li>
 								<li class="divider"></li>
-								<li><a href="{{route('admin.info.get.logout')}}">Logout</a></li>
+								<li><a href="{{route('admin.info.get.logout')}}">Đăng xuất</a></li>
 							</ul>
 						</li>
 					</ul>

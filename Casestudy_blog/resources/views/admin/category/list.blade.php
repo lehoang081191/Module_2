@@ -5,14 +5,14 @@
     <div class="module-head">
         <h3>List Category</h3>
     </div>
-    <div class="module-body table">
+    <div class="module-body table" >
         <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
             <thead>
                 <tr>
                     <th width="5%">STT</th>
                     <th>Category</th>
                     <th>Status</th>
-                    <th width="15%">Work</th>
+                    <th width="20%">Work</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +28,7 @@
                                 Hoạt Động
                             @endif
                         </td>
-                        <td width="15%">
+                        <td width="20%">
                             <a href="{{route('admin.category.get.edit',$val->id)}}" class="btn btn-small btn-info">edit</a>
                             <a href="{{route('admin.category.get.delete',$val->id)}}" class="btn btn-small btn-danger xacnhan">delete</a>
                         </td>

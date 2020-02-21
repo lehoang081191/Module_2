@@ -43,7 +43,12 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{{route('home.get.index')}}">My Blog</a>
+        <a class="navbar-brand" href="{{route('home.get.index')}}">
+            <i class="fab fa-blogger-b"></i>
+            My Blog</a>
+        <a class="navbar-brand" href="{{route('admin.get.index')}}">
+            <i class="fab fa-adn"></i>
+             Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,31 +56,29 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="{{route('home.get.about')}}">About Me</a>
+              <a class="nav-link" href="{{route('home.get.about')}}">Liên hệ</a>
             </li>
             @if(!Auth::check())
               <li class="nav-item">
-                <a class="nav-link" href="{{route('home.get.login')}}">Login</a>
+                <a class="nav-link" href="{{route('home.get.login')}}">Đăng nhập</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('home.get.regis')}}">Register</a>
+                <a class="nav-link" href="{{route('home.get.regis')}}">Đăng ký</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('admin.get.index')}}">Admin</a>
-              </li>
+
             @endif
             @if(Auth::check())
               <li class="nav-item">
                 <div class="dropdown">
                   <a class="nav-link" data-toggle="dropdown" href="#">{{$user['username']}}</a>
                   <ul class="dropdown-menu" style="min-width:auto;text-align:center;">
-                      <li><a href="{{route('home.get.edit')}}">Edit info</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#myModal">Change pass</a></li>
+                      <li><a href="{{route('home.get.edit')}}">Chỉnh sửa</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#myModal">Thay đổi</a></li>
                     </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link xacnhan" href="{{route('home.get.logout')}}">Logout</a>
+                <a class="nav-link xacnhan" href="{{route('home.get.logout')}}">Đăng xuất</a>
               </li>
             @endif
           </ul>
@@ -95,14 +98,16 @@
 
           <!-- Search Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Search</h5>
+            <h5 class="card-header">
+                <i class="fa fa-search"></i>
+                Tìm kiếm</h5>
             <div class="card-body">
                 <form action="{{route('home.get.search')}}" method="post">
                     @csrf
               <div class="input-group">
-                <input type="text" name="key" class="form-control" placeholder="Search for...">
+                <input type="text" name="key" class="form-control" placeholder="Nhập từ khóa...">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="submit">Go!</button>
+                  <button class="btn btn-secondary" type="submit">Tìm kiếm!</button>
                 </span>
             </form>
               </div>
@@ -111,7 +116,9 @@
 
           <!-- Categories Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+            <h5 class="card-header">
+                <i class="fa fa-list"></i>
+                Thể loại</h5>
             <div class="card-body">
                 @foreach($cate as  $val)
                 @if($val->status == 1)
@@ -126,7 +133,9 @@
 
           <!-- Side Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Hot news</h5>
+            <h5 class="card-header">
+                <i class="fas fa-newspaper"></i>
+                Tin mới</h5>
             <div class="card-body">
               @foreach($new as $val)
                 @if($val->status == 1)
@@ -141,7 +150,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- /.row -->
 
     </div>
@@ -154,26 +163,26 @@
               {{ csrf_field() }}
             <div class="modal-header">
 
-              <h4 class="modal-title">Change your password</h4>
+              <h4 class="modal-title">Thay đổi mật khẩu của bạn</h4>
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <label for="email">Old your password</label>
-                <input type="password" class="form-control span5 oldpass"  placeholder="Type here..." name="oldpass">
+                <label for="email">Mật khẩu cũ:</label>
+                <input type="password" class="form-control span5 oldpass"  placeholder="Nhập mật khẩu..." name="oldpass">
               </div>
               <div class="form-group">
-                <label for="pwd">New your password</label>
-                <input type="password" class="form-control span5 newpass"  placeholder="Type here..." name="newpass">
+                <label for="pwd">Mật khẩu mới</label>
+                <input type="password" class="form-control span5 newpass"  placeholder="Nhập mật khẩu..." name="newpass">
               </div>
               <div class="form-group">
-                <label for="pwd">Re enter new your password</label>
-                <input type="password" class="form-control span5 renewpass"  placeholder="Type here..." name="renewpass">
+                <label for="pwd">Nhập lại mật khẩu:</label>
+                <input type="password" class="form-control span5 renewpass"  placeholder="Nhập mật khẩu..." name="renewpass">
               </div>
               <div style="color:blue" id="ketqua"></div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <button type="submit" id="luu" class="btn btn-info">Change</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Trở lại</button>
+              <button type="submit" id="luu" class="btn btn-info">Xác nhận</button>
             </div>
           </form>
         </div>

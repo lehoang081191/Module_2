@@ -22,7 +22,10 @@
 			  	<a class="brand" href="#">
 			  		Admin Dashboard
 			  	</a>
-
+                  <a class="brand" href="{{route('home.get.index')}}">
+                    <i class="fa fa-home"></i>
+                    Home
+                </a>
 
 			</div>
 		</div><!-- /navbar-inner -->
@@ -37,17 +40,19 @@
 					<form class="form-vertical" method="post" action="{{route('admin.post.login')}}">
 						{{ csrf_field() }}
 						<div class="module-head">
-							<h3>Sign In</h3>
+							<h3>Đăng nhập</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Username">
+                                    <label for="email">Tên tài khoản:</label>
+									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Nhập mật khẩu">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="password" id="inputPassword" name="password" placeholder="Password">
+                                    <label for="pwd">Mật khẩu:</label>
+									<input class="span12" type="password" id="inputPassword" name="password" placeholder="Nhập mật khẩu">
 								</div>
 							</div>
 							@if(session('error'))
@@ -55,7 +60,7 @@
 								<div class="controls row-fluid">
 									<div class="alert alert-danger alert-dismissible">
 										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-										<strong>Danger!</strong> {{session('error')}}
+										<strong>Cảnh báo!</strong> {{session('error')}}
 									</div>
 								</div>
 							</div>
@@ -64,9 +69,9 @@
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right">Login</button>
+									<button type="submit" class="btn btn-primary pull-right">Đăng nhập</button>
 									<label class="checkbox">
-										<input type="checkbox" name="remember"> Remember me
+										<input type="checkbox" name="remember"> Ghi nhớ mật khẩu
 									</label>
 								</div>
 							</div>

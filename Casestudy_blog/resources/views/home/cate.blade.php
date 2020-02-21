@@ -20,7 +20,7 @@
                     <a href="{{route('home.get.content',$val->changetitle)}}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on <i>{{$val->created_at}}</i> by <b>{{$val->author}}</b>
+                    Được đăng vào lúc <i>{{$val->created_at}}</i> bởi <b>{{$val->author}}</b>
                 </div>
                 </div>
 
@@ -30,10 +30,10 @@
     <!-- Pagination -->
     <ul class="pagination justify-content-center mb-4">
       <li class="page-item">
-        <a class="page-link" href="#">&larr; Older</a>
+        <a class="page-link" href="#">&larr; Trước</a>
       </li>
       <li class="page-item disabled">
-        <a class="page-link" href="#">Newer &rarr;</a>
+        <a class="page-link" href="#">Sau &rarr;</a>
       </li>
     </ul>
 

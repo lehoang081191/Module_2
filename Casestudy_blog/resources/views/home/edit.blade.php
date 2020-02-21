@@ -2,35 +2,35 @@
 @section('title','Edit info')
 @section('content')
 <div class="col-lg-8">
-        <h2 style="margin-top:20px">Edit</h2>
+        <h3 style="margin-top:20px">Chỉnh sửa</h3>
         <form action="{{route('home.post.edit')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
           <div class="form-group">
-            <label for="email">Fullname</label>
-            <input type="text" 
+            <label for="email">Họ Tên</label>
+            <input type="text"
             @if($user['fullname'])
                 value="{{$user['fullname']}}"
             @endif
-            class="form-control" id="email" placeholder="Enter username" name="fullname">
+            class="form-control" id="email" placeholder="Nhập họ tên" name="fullname">
           </div>
           <div class="form-group">
-            <label for="email">Age</label>
-            <input type="text" class="form-control" 
+            <label for="email">Tuổi</label>
+            <input type="text" class="form-control"
             @if($user['age'])
                 value="{{$user['age']}}"
             @endif
-            id="email" placeholder="Enter age" name="age">
+            id="email" placeholder="Nhập số tuổi" name="age">
         </div>
         <div class="control-group">
-            
-            <div class="controls">Avatar
+
+            <div class="controls">Ảnh đại diện
                 <input type="file" style="display:none;" id="basicinput" name="avatar" class="span8 img-upload" >
                 <br>
                 <img style="padding: 10px 10px;
                 background-color: white;
                 box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
                 -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
-                -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload" 
+                -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload"
                 @if($user['avatar'])
                 src="{{asset($user['avatar'])}}"
                 @endif
@@ -40,38 +40,32 @@
                 width="50px" height="50px">
             </div>
         </div>
+        <br>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" 
+            <input type="text" class="form-control"
             @if($user['email'])
                 value="{{$user['email']}}"
             @endif
-            id="email" placeholder="Enter email" name="email">
+            id="email" placeholder="Nhập email" name="email">
         </div>
         <div class="form-group">
             <label for="email">Facebook</label>
-            <input type="text" class="form-control" 
+            <input type="text" class="form-control"
             @if($user['facebook'])
                 value="{{$user['facebook']}}"
             @endif
-            id="email" placeholder="Enter facebook" name="facebook">
+            id="email" placeholder="Nhập facebook" name="facebook">
         </div>
         <div class="form-group">
             <label for="email">Github</label>
-            <input type="text" class="form-control" 
+            <input type="text" class="form-control"
             @if($user['github'])
                 value="{{$user['github']}}"
             @endif
-            id="email" placeholder="Enter github" name="github">
+            id="email" placeholder="Nhập github" name="github">
         </div>
-        <div class="form-group">
-            <label for="email">Skype</label>
-            <input type="text" class="form-control" 
-            @if($user['skype'])
-                value="{{$user['skype']}}"
-            @endif
-            id="email" placeholder="Enter skype" name="skype">
-        </div>
+
           @if (count($errors) > 0)
           <div class="alert alert-danger span8">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -80,7 +74,7 @@
               @endforeach
           </div>
           @endif
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Xác nhận</button>
         </form>
         <br>
 </div>
@@ -94,7 +88,7 @@
     });
     $('.img-upload').change( function(event) {
         var tmppath = URL.createObjectURL(event.target.files[0]);
-            $(".img-bnupload").fadeIn("fast").attr('src',tmppath);       
+            $(".img-bnupload").fadeIn("fast").attr('src',tmppath);
         });
 </script>
 @endsection

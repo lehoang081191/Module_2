@@ -19,7 +19,7 @@
                 <a href="{{route('home.get.content',$val->changetitle)}}" class="btn btn-primary">Xem thêm &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                Posted on <i>{{$val->created_at}}</i> by <b>{{$val->author}}</b>
+                Được đăng vào lúc <i>{{$val->created_at}}</i> bởi <b>{{$val->author}}</b>
             </div>
             </div>
         @endif
