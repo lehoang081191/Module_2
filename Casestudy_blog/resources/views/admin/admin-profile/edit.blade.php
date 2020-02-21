@@ -11,7 +11,7 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Fullname</label>
                 <div class="controls">
-                    <input type="text" id="basicinput" 
+                    <input type="text" id="basicinput"
                     @if($admin['fullname'])
                     value="{{$admin['fullname']}}"
                     @endif
@@ -21,7 +21,7 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Age</label>
                 <div class="controls">
-                    <input type="text" id="basicinput" 
+                    <input type="text" id="basicinput"
                     @if($admin['age'])
                     value="{{$admin['age']}}"
                     @endif
@@ -47,7 +47,7 @@
                     background-color: white;
                     box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
                     -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
-                    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload" 
+                    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload"
                     @if($admin['avatar'])
                     src="{{asset($admin['avatar'])}}"
                     @endif
@@ -60,7 +60,7 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Email</label>
                 <div class="controls">
-                    <input type="text" id="basicinput" 
+                    <input type="text" id="basicinput"
                     @if($admin['email'])
                     value="{{$admin['email']}}"
                     @endif
@@ -70,7 +70,7 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Facebook</label>
                 <div class="controls">
-                    <input type="text" id="basicinput" 
+                    <input type="text" id="basicinput"
                     @if($admin['facebook'])
                     value="{{$admin['facebook']}}"
                     @endif
@@ -80,7 +80,7 @@
             <div class="control-group">
                 <label class="control-label" for="basicinput">Github</label>
                 <div class="controls">
-                    <input type="text" id="basicinput" 
+                    <input type="text" id="basicinput"
                     @if($admin['github'])
                     value="{{$admin['github']}}"
                     @endif
@@ -88,19 +88,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="basicinput">Skype</label>
-                <div class="controls">
-                    <input type="text" id="basicinput" 
-                    @if($admin['skype'])
-                    value="{{$admin['skype']}}"
-                    @endif
-                     name="skype" placeholder="Type something here..." class="span8">
-                </div>
-            </div>
-            <div class="control-group">
                 <label class="control-label" for="basicinput">Status</label>
                 <div class="controls">
-                    <textarea name="status" class="span12" 
+                    <textarea name="status" class="span12"
                     cols="5">@if($admin['status']){{$admin['status']}}@endif</textarea>
                 </div>
             </div>
@@ -142,6 +132,6 @@
     });
     $('.img-upload').change( function(event) {
         var tmppath = URL.createObjectURL(event.target.files[0]);
-            $(".img-bnupload").fadeIn("fast").attr('src',tmppath);       
+            $(".img-bnupload").fadeIn("fast").attr('src',tmppath);
         });
 @endsection

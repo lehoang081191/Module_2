@@ -16,7 +16,7 @@ use Category;
 class HomeController extends Controller
 {
     public function getIndex(){
-        $new = news::where('status', 1)->latest()->paginate(5);
+        $new = news::where('status', 1)->latest()->paginate(3);
 
         return view('home.home',['new' => $new]);
     }

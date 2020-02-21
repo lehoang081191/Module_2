@@ -225,17 +225,17 @@ hr {
 <div class="module">
     <div class="module-body">
         <div class="col-xs-12 col-sm-9">
-        
+
             <!-- User profile -->
             <div class="panel panel-default">
               <div class="panel-heading">
-              <h4 class="panel-title">Admin profile 
+              <h4 class="panel-title">Admin profile
               <a href="{{route('admin.info.get.edit')}}" class="btn btn-primary left" style="color:antiquewhite;" >Edit</a>
             </h4>
               </div>
               <div class="panel-body">
                 <div class="profile__avatar">
-                  <img 
+                  <img
                     @if($admin['avatar'])
                       src="{{asset($admin['avatar'])}}"
                     @endif
@@ -245,7 +245,7 @@ hr {
                    alt="...">
                 </div>
                 <div class="profile__header">
-                  <h4>{{$admin['username']}}<small> <i>Lv {{$admin['level']}} </i>-<strong> 
+                  <h4>{{$admin['username']}}<small> <i>Lv {{$admin['level']}} </i>-<strong>
                       @if($admin['level'] == 3)
                       {{'Super Admin'}}
                       @endif
@@ -257,14 +257,14 @@ hr {
                       @endif
 					  </strong></small>
 					  @if($check)
-				  
+
 					  @if($check[0]->checkOnline($admin['id']))
 					  	<span class="online"></span>
 					  @endif
 					  @if(!$check[0]->checkOnline($admin['id']))
 					  	<span class="offline"></span>
 					  @endif
-				  
+
                 @endif
 					</h4>
                   <p class="text-muted">
@@ -275,7 +275,7 @@ hr {
                     {{'???'}}
                     @endif
                   </p>
-                  
+
                 </div>
               </div>
             </div>
@@ -367,17 +367,6 @@ hr {
                         @endif
                       </td>
                     </tr>
-                    <tr>
-                      <th><strong>Skype</strong></th>
-                      <td>
-                        @if($admin['skype'])
-                            {{$admin['skype']}}
-                        @endif
-                        @if(!$admin['skype'])
-                            ???
-                        @endif
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -429,9 +418,9 @@ hr {
                 </div>
               </div>
             </div>
-    
+
           </div>
-          
+
     </div>
 </div>
 @endsection

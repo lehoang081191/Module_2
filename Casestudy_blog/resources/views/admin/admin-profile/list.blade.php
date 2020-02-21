@@ -37,7 +37,7 @@
                 <div class="media user">
                     <a class="media-avatar pull-left" href="{{route('admin.info.get.admininfo',$val->id
                     )}}">
-                        <img 
+                        <img
                         @if(!$val->avatar)
                         src="{{asset('admin_layout/images/default.png')}}"
                         @endif
@@ -50,7 +50,7 @@
                     <div class="media-body">
                         <h3 class="media-title">
                             {{$val->username}}
-                            <small> <i>Lv {{$val->level}} </i>-<strong> 
+                            <small> <i>Lv {{$val->level}} </i>-<strong>
                                     @if($val->level == 3)
                                     {{'Super Admin'}}
                                     @endif
@@ -61,15 +61,15 @@
                                     {{'Normal Admin'}}
                                     @endif
                                     </strong></small>
-                            
-				                
+
+
 					                @if($val->isOnline())
 					  	                <span class="online"></span>
 					                @else
 					  	                <span class="offline"></span>
 					                @endif
-				                
-                            
+
+
                         </h3>
                         <p>
                             <small class="muted">

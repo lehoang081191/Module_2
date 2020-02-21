@@ -88,16 +88,6 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="basicinput">Skype</label>
-                <div class="controls">
-                    <input type="text" id="basicinput"
-                    @if($admin['skype'])
-                    value="{{$admin['skype']}}"
-                    @endif
-                     name="skype" placeholder="Type something here..." class="span8">
-                </div>
-            </div>
-            <div class="control-group">
                 <label class="control-label" for="basicinput">Status</label>
                 <div class="controls">
                     <textarea name="status" class="span12"

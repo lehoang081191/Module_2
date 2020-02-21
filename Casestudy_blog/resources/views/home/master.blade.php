@@ -46,9 +46,9 @@
         <a class="navbar-brand" href="{{route('home.get.index')}}">
             <i class="fab fa-blogger-b"></i>
             My Blog</a>
-        <a class="navbar-brand" href="{{route('admin.get.index')}}">
+        {{-- <a class="navbar-brand" href="{{route('admin.get.index')}}">
             <i class="fab fa-adn"></i>
-             Admin</a>
+             Admin</a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -137,7 +137,7 @@
                 <i class="fas fa-newspaper"></i>
                 Tin mới</h5>
             <div class="card-body">
-              @foreach($new as $val)
+              @foreach(App\news::latest()->paginate(5) as $val)
                 @if($val->status == 1)
                   <li style="list-style:none">
 
