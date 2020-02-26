@@ -37,8 +37,9 @@
     </style>
 
   </head>
-
   <body>
+
+    @yield('qc')
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -65,6 +66,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('home.get.regis')}}">Đăng ký</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.get.index')}}">Admin</a>
+              </li>
 
             @endif
             @if(Auth::check())
@@ -85,6 +89,8 @@
         </div>
       </div>
     </nav>
+
+    @yield('anh')
 
     <!-- Page Content -->
     <div class="container">
@@ -192,8 +198,10 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Starboostrap - cre by <a target="blank" href="https://www.facebook.com/profile.php?id=100003296686082">lê hoàng</a> </p>
-      </div>
+        <p class="m-0 text-center text-white">Liên hệ <a target="blank" href="https://www.facebook.com/profile.php?id=100003296686082">lê hoàng</a> </p>
+        <p class="m-0 text-center text-white">Sđt: 0935710001</p>
+        <p class="m-0 text-center text-white">Email: lehoang0811@gmail.com </p>
+    </div>
       <!-- /.container -->
     </footer>
 
