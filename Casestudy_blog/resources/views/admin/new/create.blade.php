@@ -35,7 +35,7 @@
                     background-color: white;
                     box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
                     -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
-                    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload" src="{{asset('admin_layout/images/default.png')}}" width="50px" height="50px">
+                    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);" class="img-bnupload" src="{{asset('admin_layout/images/images.jfif')}}" width="100px" height="10px">
                 </div>
             </div>
             <div class="control-group">
